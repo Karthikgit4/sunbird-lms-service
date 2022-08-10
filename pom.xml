@@ -65,9 +65,6 @@
                         <exclude>**/routes$javascript.**</exclude>
                         <exclude>org/sunbird/models/**/*</exclude>
                     </excludes>
-		    <includes>
-			<include>**/*.class</include>
-	            </includes>
                 </configuration>
                 <executions>
                     <execution>
