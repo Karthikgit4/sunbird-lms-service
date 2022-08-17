@@ -1,6 +1,8 @@
 FROM adoptopenjdk/openjdk11:alpine-slim
 MAINTAINER "Manojv" "manojv@ilimi.in"
-ENV PATH="${PATH}:/sbin"
+RUN apk update
+RUN apk add  unzip
+RUN apk add curl
 RUN mkdir -p /home/sunbird/learner
 COPY ./controller/target/learning-service-1.0-SNAPSHOT.jar /home/sunbird/learner/
 RUN jar xvf ./controller/target/learning-service-1.0-SNAPSHOT.jar -d /home/sunbird/learner/
