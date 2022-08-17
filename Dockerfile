@@ -1,5 +1,6 @@
 FROM adoptopenjdk/openjdk11:alpine-slim
 MAINTAINER "Manojv" "manojv@ilimi.in"
+ENV PATH="${PATH}:/sbin"
 RUN apk update \
     && apk add  unzip \
     && apk add curl \
