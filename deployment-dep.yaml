@@ -1,20 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sunbird_lms_service
+  name: sunbird-lms-service
   labels:
-    app: sunbird_lms_service
+    app: sunbird-lms-service
     version: v1
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: sunbird-lms-service
   template:
     metadata:
       labels:
-        app: sunbird_lms_service
+        app: sunbird-lms-service
     spec:
       containers:
-        - image: image-registry.openshift-image-registry.svc:5000/sunbird-cd/sunbird_lms_service:latest
-          name: sunbird_lms_service
+        - image: image-registry.openshift-image-registry.svc:5000/sunbird-cd/sunbird-lms-service:latest
+          name: sunbird-lms-service
           ports:
             - containerPort: 3000
               protocol: TCP
