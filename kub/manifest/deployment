@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: sunbird-lms-service
+  labels:
+    app: sunbird-lms-service
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: sunbird-lms-service
+    spec:
+      containers:
+        - image:image-registry.openshift-image-registry.svc:5000/sunbird-cd/sunbird_lms_service@sha256:9319675c4ba580cd649205a42087845a617b58cf9d16e99bf077e3b45fc7302f 
+          name: sunbird-lms-service
+          ports:
+            - containerPort: 5000
+              protocol: TCP
