@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk11:alpine-slim
+FROM openjdk:8-jre-alpine
 MAINTAINER "Manojv" "manojv@ilimi.in"
 RUN mkdir -p /home/sunbird/learner
 ADD ./controller/target/learning-service-1.0-SNAPSHOT.jar /home/sunbird/learner/
